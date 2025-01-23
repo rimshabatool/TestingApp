@@ -6,7 +6,7 @@ export interface Product {
   description: string;
   price: number;
   text: number;
-  hsdkdhf:number
+  hsdkdhf:number  //abi ki h
 }
 
 interface ProductsState {
