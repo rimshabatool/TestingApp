@@ -1,12 +1,11 @@
-// src/features/products/productsSlice.ts
-
-import { createSlice } from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 
 export interface Product {
   id: number;
   title: string;
   description: string;
   price: number;
+  text: number;
 }
 
 interface ProductsState {
@@ -27,6 +26,6 @@ const productsSlice = createSlice({
   },
 });
 
-export const { setProducts } = productsSlice.actions;
+export const {setProducts} = productsSlice.actions;
 
 export default productsSlice.reducer;
