@@ -5,7 +5,7 @@ const logger = (storeAPI: any) => (next: any) => (action: any) => {
   console.log('State before action:', storeAPI.getState());
   const result = next(action);
   console.log('State after action:', storeAPI.getState());
-console.log('hello')
+
   return result;
 };
 
