@@ -6,6 +6,7 @@ const logger = (storeAPI: any) => (next: any) => (action: any) => {
   const result = next(action);
   console.log('State after action:', storeAPI.getState());
   console.log('bssss bhai ho jaaaaaa');
+  console.log('bssss bhai ho jaaaaaa');
   return result;
 };
 
