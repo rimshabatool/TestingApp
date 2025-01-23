@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">FirebaseTesting</string>
+    <string name="app_name">com.firebasetesting</string>
+    <string name="facebook_app_id">3893400894264951</string>
+    <string name="facebook_client_token">88775052d234810e8fa1feec55ac9ace</string>
+
 </resources>
