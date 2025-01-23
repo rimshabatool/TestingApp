@@ -22,9 +22,11 @@ const productsSlice = createSlice({
   reducers: {
     setProducts: (state, action) => {
       state.products = action.payload;
+
     },
   },
 });
+console.log('hello')
 
 export const {setProducts} = productsSlice.actions;
 
