@@ -7,7 +7,6 @@ export const Get_Location = gql`
       name
       description
       photo
-      hi
     }
   }
 `;
