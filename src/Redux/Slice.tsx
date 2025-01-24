@@ -6,7 +6,6 @@ export interface Product {
   description: string;
   price: number;
   text: number;
-  newtype:string
 }
 
 interface ProductsState {
