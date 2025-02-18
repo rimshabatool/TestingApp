@@ -1,6 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList, TouchableOpacity, Image } from 'react-native';
-import Animated, { Extrapolation, interpolate, useAnimatedScrollHandler, useAnimatedStyle, useSharedValue } from 'react-native-reanimated';
+import {
+  StyleSheet,
+  Text,
+  View,
+  FlatList,
+  TouchableOpacity,
+  Image,
+} from 'react-native';
+import Animated, {
+  Extrapolation,
+  interpolate,
+  useAnimatedScrollHandler,
+  useAnimatedStyle,
+  useSharedValue,
+} from 'react-native-reanimated';
 
 const item_margin_bottom = 20;
 const item_padding = 10;
@@ -8,35 +21,98 @@ const item_height = 100;
 const itemsize = item_height + item_padding * 2 + item_margin_bottom;
 
 const data = [
-  { id: '1', name: 'John Doe', description: 'A brief description about John.', image: require('../../assets/Images/1.jpg') },
-  { id: '2', name: 'Jane Doe', description: 'A brief description about Jane.', image: require('../../assets/Images/2.jpg') },
-  { id: '3', name: 'Alice', description: 'A brief description about Alice.', image: require('../../assets/Images/2.jpg') },
-  { id: '4', name: 'John Doe', description: 'A brief description about John.', image: require('../../assets/Images/1.jpg') },
-  { id: '5', name: 'Jane Doe', description: 'A brief description about Jane.', image: require('../../assets/Images/2.jpg') },
-  { id: '6', name: 'Alice', description: 'A brief description about Alice.', image: require('../../assets/Images/2.jpg') },
-  { id: '7', name: 'John Doe', description: 'A brief description about John.', image: require('../../assets/Images/1.jpg') },
-  { id: '8', name: 'Jane Doe', description: 'A brief description about Jane.', image: require('../../assets/Images/2.jpg') },
-  { id: '9', name: 'Alice', description: 'A brief description about Alice.', image: require('../../assets/Images/2.jpg') },
-  { id: '10', name: 'Alice', description: 'A brief description about Alice.', image: require('../../assets/Images/2.jpg') },
-  { id: '11', name: 'Alice', description: 'A brief description about Alice.', image: require('../../assets/Images/2.jpg') },
-  { id: '12', name: 'Alice', description: 'A brief description about Alice.', image: require('../../assets/Images/2.jpg') },
-  { id: '13', name: 'Alice', description: 'A brief description about Alice.', image: require('../../assets/Images/2.jpg') },
-
-
+  {
+    id: '1',
+    name: 'John Doe',
+    description: 'A brief description about John.',
+    image: require('../../assets/Images/1.jpg'),
+  },
+  {
+    id: '2',
+    name: 'Jane Doe',
+    description: 'A brief description about Jane.',
+    image: require('../../assets/Images/2.jpg'),
+  },
+  {
+    id: '3',
+    name: 'Alice',
+    description: 'A brief description about Alice.',
+    image: require('../../assets/Images/2.jpg'),
+  },
+  {
+    id: '4',
+    name: 'John Doe',
+    description: 'A brief description about John.',
+    image: require('../../assets/Images/1.jpg'),
+  },
+  {
+    id: '5',
+    name: 'Jane Doe',
+    description: 'A brief description about Jane.',
+    image: require('../../assets/Images/2.jpg'),
+  },
+  {
+    id: '6',
+    name: 'Alice',
+    description: 'A brief description about Alice.',
+    image: require('../../assets/Images/2.jpg'),
+  },
+  {
+    id: '7',
+    name: 'John Doe',
+    description: 'A brief description about John.',
+    image: require('../../assets/Images/1.jpg'),
+  },
+  {
+    id: '8',
+    name: 'Jane Doe',
+    description: 'A brief description about Jane.',
+    image: require('../../assets/Images/2.jpg'),
+  },
+  {
+    id: '9',
+    name: 'Alice',
+    description: 'A brief description about Alice.',
+    image: require('../../assets/Images/2.jpg'),
+  },
+  {
+    id: '10',
+    name: 'Alice',
+    description: 'A brief description about Alice.',
+    image: require('../../assets/Images/2.jpg'),
+  },
+  {
+    id: '11',
+    name: 'Alice',
+    description: 'A brief description about Alice.',
+    image: require('../../assets/Images/2.jpg'),
+  },
+  {
+    id: '12',
+    name: 'Alice',
+    description: 'A brief description about Alice.',
+    image: require('../../assets/Images/2.jpg'),
+  },
+  {
+    id: '13',
+    name: 'Alice',
+    description: 'A brief description about Alice.',
+    image: require('../../assets/Images/2.jpg'),
+  },
 ];
 
-const AnimatedItem = ({ item, index, scrollY }) => {
-  const inputRange = [-2, 0, itemsize * index, itemsize * (index+1),];
+const AnimatedItem = ({item, index, scrollY}) => {
+  const inputRange = [-2, 0, itemsize * index, itemsize * (index + 1)];
   const animatedStyle = useAnimatedStyle(() => {
     const scale = interpolate(
       scrollY.value,
       inputRange,
-      [1, 1,1, 0],
-      Extrapolation.CLAMP
+      [1, 1, 1, 0],
+      Extrapolation.CLAMP,
     );
 
     return {
-      transform: [{ scale }],
+      transform: [{scale}],
     };
   });
 
@@ -57,11 +133,11 @@ const AnimatedItem = ({ item, index, scrollY }) => {
 const FlatlistAnimation = () => {
   const scrollY = useSharedValue(0);
 
-  const scrollHandler = useAnimatedScrollHandler((event) => {
+  const scrollHandler = useAnimatedScrollHandler(event => {
     scrollY.value = event.contentOffset.y;
   });
 
-  const renderItem = ({ item, index }) => {
+  const renderItem = ({item, index}) => {
     return <AnimatedItem item={item} index={index} scrollY={scrollY} />;
   };
 
@@ -74,9 +150,9 @@ const FlatlistAnimation = () => {
       <Animated.FlatList
         data={data}
         renderItem={renderItem}
-        keyExtractor={(item) => item.id}
+        keyExtractor={item => item.id}
         onScroll={scrollHandler}
-        scrollEventThrottle={16} 
+        scrollEventThrottle={16}
       />
     </View>
   );

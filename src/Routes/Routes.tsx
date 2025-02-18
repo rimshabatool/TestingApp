@@ -14,7 +14,7 @@ import Flash from '../screens/FireBaseChatting/Flash';
 import Signup from '../screens/FireBaseChatting/Signup';
 import Login from '../screens/FireBaseChatting/Login';
 import Dashboard from '../screens/FireBaseChatting/Dashboard';
-import Setting from '../screens/FireBaseChatting/Setting';
+// import Setting from '../screens/FireBaseChatting/Setting';
 import User from '../screens/FireBaseChatting/User';
 import Chat from '../screens/FireBaseChatting/Chat';
 import ResponsiveFontsize from '../screens/ResponsiveFontsize/ResponsiveFontsize';
@@ -42,8 +42,23 @@ import Pot from '../screens/PlantApp/Tabs/Pot';
 import ItemScreen from '../screens/PlantApp/ItemScreen';
 import Graphql from '../screens/GraphSQL/Graphql';
 import ReactQuery from '../screens/ReactQuery/ReactQuery';
-import Accessibilty from '../Accessibility/Accessibilty';
 import ProductsList from '../Redux/ProductList';
+import TextAnimation from '../screens/Animaations/TextAnimation';
+import IconAnimation from '../screens/Animaations/IconAnimation';
+import MainIcon from '../screens/Animaations/MainIcon';
+import MainScreenOfBottomTab from '../screens/BotomTabNavigation/MainScreenOfBottomTab';
+import AnimatedButton from '../screens/AnimatedButtons/AnimatedButton';
+import CardAnimation from '../screens/CardAnimation.tsx/CardAnimation';
+import SamosaCardAnimation from '../screens/SamosaCardAnimation/SamosaCardAnimation';
+import ListAnimation from '../screens/ListAnimation/ListAnimation';
+import PaperAnimation from '../screens/PaperAnimationm/PaperAnimation';
+import BottomTab from '../screens/CircularBottomTab/BottomTab';
+import MainScreenOfLinkedIn from '../screens/LinkedInAnimation/MainScreenOfLinkedIn';
+import DrawAnimations from '../screens/DrawAnimations/DrawAnimations';
+import ListOfBars from '../ListOfBars/ListOfBars';
+import CartAnimations from '../screens/CartAnimations/CartAnimations';
+import LightBar from '../screens/LightBar/LightBar';
+import CheckboxAnimation from '../screens/CheckboxAnimation/CheckboxAnimation';
 
 const stack = createNativeStackNavigator();
 
@@ -51,7 +66,7 @@ export const Routes = () => {
   return (
     <NavigationContainer>
       <stack.Navigator
-        initialRouteName="ProductsList"
+        initialRouteName="LightBar"
         screenOptions={{
           headerShown: false,
           headerStyle: {backgroundColor: '#fff'},
@@ -73,7 +88,7 @@ export const Routes = () => {
         <stack.Screen name="Signup" component={Signup} />
         <stack.Screen name="Login" component={Login} />
         <stack.Screen name="Dashboard" component={Dashboard} />
-        <stack.Screen name="Setting" component={Setting} />
+        {/* <stack.Screen name="Setting" component={Setting} /> */}
         <stack.Screen name="User" component={User} />
         <stack.Screen
           options={{headerShown: true}}
@@ -106,13 +121,39 @@ export const Routes = () => {
         <stack.Screen name="ItemScreen" component={ItemScreen} />
         <stack.Screen name="Graphql" component={Graphql} />
         <stack.Screen name="ReactQuery" component={ReactQuery} />
-        <stack.Screen name="Accessibilty" component={Accessibilty} />
+        <stack.Screen name="TextAnimation" component={TextAnimation} />
         <stack.Screen name="ProductsList" component={ProductsList} />
+        {/* <stack.Screen name="IconAnimation" component={IconAnimation} /> */}
+        <stack.Screen name="MainIcon" component={MainIcon} />
+        <stack.Screen name="AnimatedButton" component={AnimatedButton} />
+        <stack.Screen
+          name="MainScreenOfLinkedIn"
+          component={MainScreenOfLinkedIn}
+        />
+
+        <stack.Screen
+          name="MainScreenOfBottomTab"
+          component={MainScreenOfBottomTab}
+        />
 
         <stack.Screen
           name="FarwardRefPractice"
           component={FarwardRefPractice}
         />
+        <stack.Screen name="CardAnimation" component={CardAnimation} />
+        <stack.Screen
+          name="SamosaCardAnimation"
+          component={SamosaCardAnimation}
+        />
+        <stack.Screen name="BottomTab" component={BottomTab} />
+        <stack.Screen name="ListAnimation" component={ListAnimation} />
+        <stack.Screen name="PaperAnimation" component={PaperAnimation} />
+        <stack.Screen name="DrawAnimations" component={DrawAnimations} />
+        <stack.Screen name="ListOfBars" component={ListOfBars} />
+        <stack.Screen name="CartAnimations" component={CartAnimations} />
+        <stack.Screen name="LightBar" component={LightBar} />
+        <stack.Screen name="CheckboxAnimation" component={CheckboxAnimation} />
+
       </stack.Navigator>
     </NavigationContainer>
   );
