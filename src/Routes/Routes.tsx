@@ -66,7 +66,7 @@ export const Routes = () => {
   return (
     <NavigationContainer>
       <stack.Navigator
-        initialRouteName="LightBar"
+        initialRouteName="CheckboxAnimation"
         screenOptions={{
           headerShown: false,
           headerStyle: {backgroundColor: '#fff'},
@@ -153,7 +153,6 @@ export const Routes = () => {
         <stack.Screen name="CartAnimations" component={CartAnimations} />
         <stack.Screen name="LightBar" component={LightBar} />
         <stack.Screen name="CheckboxAnimation" component={CheckboxAnimation} />
-
       </stack.Navigator>
     </NavigationContainer>
   );

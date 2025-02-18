@@ -7,6 +7,10 @@ export const Get_Location = gql`
       name
       description
       photo
+<<<<<<< HEAD
+=======
+      userrid
+>>>>>>> 2b3083ae84e00fa9345e3c28d8227ff742f3f234
     }
   }
 `;
